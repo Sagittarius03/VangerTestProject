@@ -1,0 +1,52 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+ENV/
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Кэш Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+media/
+!media/.gitkeep
+
+# Статические файлы
+staticfiles/
+static_collected/
+
+# Файлы окружения
+.env
+.env.local
+.env.production
+
+# Логи
+*.log
+logs/
+
+# Тестовые отчеты
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+
+# Временные файлы
+*.bak
+*.tmp

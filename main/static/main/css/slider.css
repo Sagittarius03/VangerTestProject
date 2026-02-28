@@ -1,0 +1,235 @@
+/* Стили для слайдера */
+.slider-section {
+    background-color: #1F242C;
+    padding: 80px 0;
+    color: white;
+}
+
+.slider-for {
+    margin-bottom: 30px;
+}
+
+.slider-for img {
+    width: 100%;
+    max-width: 945px;
+    height: 529.2px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.slider-nav {
+    padding: 0 40px;
+}
+
+/* Сброс стилей Slick */
+.slider-nav .slick-list {
+    overflow: hidden;
+    padding: 5px !important;
+}
+
+.slider-nav .slick-track {
+    display: flex;
+    gap: 15px;
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+.slider-nav .slick-slide {
+    float: none;
+    height: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    margin: 0;
+    padding: 2px;
+}
+
+.slider-nav .slick-slide > div {
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Стили для миниатюр - десктопная версия 165x165 */
+.slider-nav .slick-slide img {
+    width: 165px;
+    height: 165px;
+    max-width: 165px;
+    min-width: 165px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 4px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Активная миниатюра */
+.slider-nav .slick-current {
+    opacity: 1;
+}
+
+.slider-nav .slick-current img {
+    border-color: rgb(255, 255, 255);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 52, 43, 0.3);
+}
+
+/* Кастомные стрелки */
+.slider-nav .slick-prev,
+.slider-nav .slick-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 52, 43, 1);
+    border-radius: 50%;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-nav .slick-prev:before,
+.slider-nav .slick-next:before {
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+    line-height: 1;
+}
+
+.slider-nav .slick-prev {
+    left: -20px;
+}
+
+.slider-nav .slick-next {
+    right: -20px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 992px) {
+    .slider-nav {
+        padding: 0 30px;
+    }
+    
+    .slider-nav .slick-prev {
+        left: -15px;
+    }
+    
+    .slider-nav .slick-next {
+        right: -15px;
+    }
+    
+    .slider-nav .slick-slide img {
+        width: 140px;
+        height: 140px;
+        max-width: 140px;
+        min-width: 140px;
+        border-width: 2px;
+    }
+}
+
+/* Адаптация для мобильных устройств - миниатюры 80x80 */
+@media (max-width: 768px) {
+    .slider-section {
+        padding: 50px 0;
+    }
+    
+    .slider-nav {
+        padding: 0 15px;
+    }
+    
+    .slider-nav .slick-track {
+        gap: 8px;
+    }
+    
+    .slider-nav .slick-slide img {
+        width: 80px;
+        height: 80px;
+        max-width: 80px;
+        min-width: 80px;
+        border-width: 2px;
+    }
+    
+    .slider-nav .slick-list {
+        padding: 3px !important;
+    }
+    
+    .slider-for img {
+        height: 350px;
+    }
+    
+    /* Скрываем стрелки на мобильных */
+    .slider-nav .slick-prev,
+    .slider-nav .slick-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider-section {
+        padding: 40px 0;
+    }
+    
+    .slider-nav {
+        padding: 0 10px;
+    }
+    
+    .slider-nav .slick-slide img {
+        width: 80px;
+        height: 80px;
+        max-width: 80px;
+        min-width: 80px;
+        border-width: 2px;
+    }
+    
+    .slider-for img {
+        height: 280px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 375px) {
+    .slider-nav .slick-slide img {
+        width: 80px;
+        height: 80px;
+        max-width: 80px;
+        min-width: 80px;
+    }
+}
+
+/* Точки (dots) - если понадобятся */
+.slider-nav .slick-dots {
+    bottom: -40px;
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+.slider-nav .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+.slider-nav .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.slider-nav .slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    opacity: 1;
+    line-height: 1;
+    content: '•';
+}
+
+.slider-nav .slick-dots li.slick-active button:before {
+    color: rgb(255, 255, 255);
+}
