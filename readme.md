@@ -6,7 +6,15 @@
   SECRET_KEY=your_secret_key_here
   DEBUG=True
   ALLOWED_HOSTS = localhost, 127.0.0.1
+
+  DB_NAME = your_name_db
+  DB_USER = username
+  DB_PASSWORD = your_password
+  DB_HOST = localhost
+  DB_PORT = 3306
   ```
+- Подключите ваш mysql и создайте в нем БД, дайте нужные данные в .env
+
 Тех. Задание:
 - сборку проекта осуществить с помощью python 3.12, Django 5.2 и MySQL
 - проект разместить в git репозитории
