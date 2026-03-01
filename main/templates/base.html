@@ -17,6 +17,7 @@
     
     <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/zoom.css' %}">
 </head>
 <body>
     <header class="header-container">
@@ -137,31 +138,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <script>
-        $(document).ready(function(){
-            // Инициализация главного слайдера
-            $('.slider-for').slick({
-                autoplay: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                fade: false,
-                asNavFor: '.slider-nav'
-            });
-            
-            // Инициализация навигационного слайдера с адаптивными настройками
-            $('.slider-nav').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                asNavFor: '.slider-for',
-                dots: false,
-                centerMode: true,
-                focusOnSelect: true,
-                arrows: true,
-                
-            });
-        });
-    </script>
+    <script src="{% static 'main/js/slider.js' %}"></script>
+    <script src="{% static 'main/js/image-zoom.js' %}"></script>
 
 </body>
 </html>

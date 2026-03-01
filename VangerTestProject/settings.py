@@ -12,14 +12,11 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key-for-dev')
+SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key-for-dev')
 
-DEBUG = os.environ.get('DEBUG').lower() == 'true'  # type: ignore
+DEBUG = os.getenv('DEBUG').lower() == 'true'  # type: ignore
 
-ALLOWED_HOSTS = str(os.environ.get('ALLOWED_HOSTS')).split(', ')
-
-
-# Application definition
+ALLOWED_HOSTS = str(os.getenv('ALLOWED_HOSTS')).split(', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,9 +65,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'VangerTestProject.wsgi.application'
 
 DATABASES = {
-    'default': {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
 
@@ -107,9 +112,8 @@ THUMBNAIL_ALIASES = {
     },
 }
 
-# Важно для работы с filer
 FILER_CANONICAL_URL = 'sharing/'
-FILER_DEBUG = True  # Временно включите для отладки
+FILER_DEBUG = DEBUG
 FILER_ENABLE_LOGGING = True
 
 
